@@ -18,16 +18,6 @@ class Node
   def remove
     # optional but useful, connects previous link to next link
     # and removes self from list.
-    # previous_node = self.prev
-    # next_node = self.next
-    # previous_node.next = next_node if !previous_node.nil?
-    # next_node.prev = previous_node if !next_node.nil?
-    # self.prev.next = self.next if self.prev
-    # self.next.prev = self.prev if self.next
-    # self.next = nil
-    # self.prev = nil
-    # self
-    # return self
   end
 end
 
@@ -46,11 +36,10 @@ include Enumerable
   end
 
   def first
-    @head.next# empty? ? nil : self.next
+    @head.next
   end
 
   def last
-    # empty?
     @tail.prev
   end
 
@@ -88,11 +77,7 @@ include Enumerable
 
   def remove(key)
     self.each do |node|
-      # debugger
       if node.key == key
-        # debugger
-        # node.remove
-        # return node.val
         previous_node = node.prev
         next_node = node.next
         previous_node.next = next_node
@@ -102,7 +87,6 @@ include Enumerable
   end
 
   def each(&prc)
-    # debugger
     node = first
     while node != @tail
       prc.call(node)
