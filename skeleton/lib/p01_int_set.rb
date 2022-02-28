@@ -45,7 +45,7 @@ class IntSet
   end
 
   def include?(num)
-    !self[num].empty?
+    self[num].include?(num)
   end
 
   private
@@ -87,7 +87,7 @@ class ResizingIntSet
   end
 
   def include?(num)
-    !self[num].empty?
+    self[num].include?(num)
   end
 
   private
