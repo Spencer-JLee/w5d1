@@ -72,7 +72,6 @@ class ResizingIntSet
     if num >= num_buckets
       resize!
     end
-    # debugger
     if !self.include?(num)
       i = num % num_buckets
       @store[i].push(num)
