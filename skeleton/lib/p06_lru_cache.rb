@@ -15,7 +15,16 @@ class LRUCache
 
   def get(key)
     if @map.include?(key)
-      
+      @store.update(key, max)
+    else
+      val = &prc.call(key)
+      @store.append(key, val)
+      node = @store.get(key)
+      @map.set(key, node)
+      if count > @max
+        
+      end
+    end
   end
 
   def to_s
