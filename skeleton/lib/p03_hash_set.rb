@@ -10,7 +10,7 @@ class HashSet
     if @count >= num_buckets
       resize!
     end
-    if !self.include?(key.hash)
+    if !self.include?(key)
       i = key.hash % num_buckets
       @store[i].push(key)
       @count += 1
